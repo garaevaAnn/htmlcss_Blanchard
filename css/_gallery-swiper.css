@@ -1,0 +1,171 @@
+.gallery__slides-container {
+  overflow: hidden;
+}
+
+.gallery__swiper-navigation {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.gallery__swiper-pagination {
+  margin-right: 19px;
+  padding-top: 4px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.nav-btn {
+  position: relative;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-gray6);
+  border:  none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: var(--violet-middle);
+}
+
+.nav-btn:focus {
+  outline: none;
+  border: 2px solid var(--color-black);
+}
+
+.nav-btn:active {
+  border: 2px solid var(--color-black);
+  background-color: var(--violet-dark);
+}
+
+.nav-btn:disabled {
+ opacity: 0.5;
+}
+
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 7px / 2);
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.gallery__swiper-prev {
+  margin-right: 21px;
+}
+
+.gallery__swiper-next::before {
+  left: calc(50% - 7px / 2);
+  border-top: 1px solid var(--color-white);
+  border-right: 1px solid var(--color-white);
+}
+
+.gallery__swiper-prev::before {
+  left: calc(50% - 7px / 2);
+  border-left: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-white);
+}
+
+.gallery__slide {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--violet-light);
+}
+
+.gallery__slide::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding-top: calc(100% - 6px);
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  transition: background-color var(--short-transition), border-color var(--short-transition);
+}
+
+.gallery__slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  opacity: 0;
+  background-color: var(--transparent-dark-5);
+  background-image: url("../img/zoom.svg");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  background-clip: content-box;
+  transition: opacity .5s ease;
+}
+
+.gallery__slide:hover::after {
+  opacity: 1;
+}
+
+.gallery__slide:focus {
+  outline: none;
+}
+
+.gallery__slide:focus::before {
+  border-color: var(--violet-dark);
+}
+
+.gallery__slide:active::before {
+  border-color: var(--violet-ultralight);
+  background-color: var(--transparent-rose);
+}
+
+.gallery__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Адаптивная высота слайда регулируется относительно его ширины с помощью padding-top в % для псевдоэлемента ::before */
+
+@media (max-width: 1280px) {
+
+  .gallery__slide::before {
+    padding-top: calc(113% - 6px);
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery__slide::before {
+    padding-top: 103%;
+  }
+
+  .gallery__swiper-prev {
+    margin-right: 18px;
+  }
+
+  .gallery__swiper-navigation {
+    margin-bottom: 29px;
+  }
+}
+
+
+
+@media (max-width: 610px) {
+
+  .gallery__swiper-navigation {
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  .gallery__slide::before {
+    padding-top: 124%;
+  }
+}

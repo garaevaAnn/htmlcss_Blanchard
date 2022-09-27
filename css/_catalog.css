@@ -1,0 +1,476 @@
+.catalog {
+  padding-top: 82px;
+}
+
+.catalog__desc {
+  margin-bottom: 38px;
+}
+
+.catalog__content {
+  justify-content: space-between;
+}
+
+.catalog__painter-content {
+  width:calc(50% - 50px);
+}
+
+.catalog__painter-image {
+  margin-bottom: 28px;
+}
+
+.catalog__painter-name {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.catalog__painter-name--empty {
+  margin-bottom: 6px;
+}
+
+.catalog__painter-desc {
+  margin-bottom: 0;
+}
+
+.catalog__painter-desc--empty {
+  margin-bottom: 18px;
+}
+
+.catalog__painter-years {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-gray);
+}
+
+.catalog__painter-info {
+  display: none;
+}
+
+.catalog__painter-info.is-open {
+  display: block;
+  animation-name: painters-open;
+  animation-duration: .3s;
+}
+
+.catalog__painters {
+  width: 50%;
+}
+
+
+/* .painters-info {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-darkgray);
+} */
+
+.is-active .painters-info__painter {
+  visibility: visible;
+  border-color: lightgray;
+}
+
+.painters-info__painter {
+  overflow: hidden;
+  visibility: hidden;
+  margin-top: -1px;
+  border-bottom: 1px solid transparent;
+}
+
+.is-active.painters-info__painter {
+  border-color: var(--violet-dark);
+}
+
+.painters-info__list {
+  padding-top: 26px;
+  padding-bottom: 31px;
+  padding-right: 70px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--color-darkgray);
+  padding-left: 0;
+  column-count: 3;
+  /* height: 337px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+}
+
+.painters-info__item {
+  width: 197px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  /* margin-right: 10px; */
+}
+
+.painters-info__link-name {
+  /* padding: 0;
+  border: none;
+  background-color: transparent; */
+  transition: color var(--short-transition), background-color var(--short-transition), border-bottom var(--short-transition);
+}
+
+.painters-info__link-name.is-open:not(:hover) {
+  background-color: var(--violet-dark);
+  color: var(--color-white);
+}
+
+.painters-info__item-text {
+  width: max-content;
+  margin-right: 5px;
+}
+
+.painters-info__link-name:focus:not(:hover):not(:active) {
+  outline: none;
+ background-color: var(--violet-dark);
+ color: var(--color-white);
+}
+
+.painters-info__link-name:active{
+  color: var(--violet-dark);
+  border: none;
+}
+
+.painters-info__years {
+  width: 100%;
+  margin-bottom: -2px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: border-color var(--short-transition);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid var(--color-middlegray);
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.catalog__painters-item:first-child  .painters-info__years{
+  border-top: 1px solid var(--color-middlegray);
+}
+
+.painters-info__years:focus-visible {
+  outline: none;
+}
+
+.is-active .painters-info__years:not(:hover)  {
+   border-color: var(--violet-dark);
+}
+
+
+.painters-info__text {
+  max-width: 350px;
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+  transition: color var(--short-transition), background-color var(--short-transition);
+  text-align: start;
+  color: var(--color-darkgray);
+}
+
+.painters-info__years:focus-visible .painters-info__text {
+  color:  var(--color-white);
+  background-color: var(--violet-middle);
+  outline: none;
+}
+
+.is-active .painters-info__text {
+  color: var(--violet-dark);
+}
+
+.painters-info__link {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-lightgray);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  color: var(--color-black);
+  border: 2px solid transparent;
+  transition: background-color var(--short-transition);
+}
+ .painters-info__link-open {
+   position: absolute;
+   top: 16px;
+   left: 18px;
+   display: block;
+   height: 12px;
+   width: 12px;
+   border-top: 1px solid ;
+   border-right: 1px solid ;
+  transform: rotate(135deg);
+  transition: transform var(--short-transition);
+
+ }
+
+
+.painters-info__years:focus-visible .painters-info__link {
+  background-color:  var(--violet-ultralight);
+}
+
+
+.is-active .painters-info__link {
+  background-color:  var(--violet-ultralight);
+  border-color: var(--violet-dark);
+}
+
+.is-active .painters-info__link-open {
+  top:20px;
+  transform: rotate(-45deg);
+}
+
+.painters-info__geen-painter {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 2px;
+}
+.painters-info__gray {
+  padding: 12px;
+  outline: 1px solid  #B7B7B7;
+  margin-right: 34px;
+}
+
+.geen-painter {
+  justify-content: space-between;
+}
+
+.geen-painter__desc {
+  width: 280px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--color-black);
+}
+
+.geen-painter__desc-header,
+.geen-painter__desc-text {
+  margin: 0;
+  padding: 0;
+}
+
+.geen-painter__desc-header {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.geen-painter__desc-text,
+.geen-painter__desc-link,
+.nopainter-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.geen-painter__desc-text {
+  margin-bottom: 5px;
+}
+
+.geen-painter__desc-link,
+.nopainter-link {
+  font-weight: 600;
+  color: var(--violet-middle);
+}
+
+.geen-painter__desc-link:focus,
+.nopainter-link:focus {
+  outline: none;
+  color: var(--violet-dark);
+}
+
+@media (min-width : 1280px) {
+
+  .painters-info__link-name:hover {
+    color: var(--violet-middle);
+    border-bottom: 1px solid var(--violet-middle);
+  }
+
+  .catalog__painters-item:first-child  .painters-info__years:hover{
+    border-color: var(--violet-middle);
+  }
+
+  .painters-info__years:hover {
+    z-index: 1;
+    position: relative;
+    border-color: var(--violet-middle);
+  }
+
+  .painters-info__years:hover .painters-info__text {
+    color:  var(--violet-middle);
+    outline: none;
+  }
+  .geen-painter__desc-link:hover,
+  .nopainter-link:hover {
+    color: var(--violet-ultralight);
+  }
+
+  .painters-info__years:hover .painters-info__link {
+    background-color:  var(--violet-ultralight);
+  }
+}
+
+@media (max-width : 1600px) {
+  .painters-info__list {
+    column-count: 2;
+    padding-right: 0;
+  }
+
+}
+
+@media (max-width : 1280px) {
+  .catalog {
+    padding-top: 80px;
+  }
+
+  .catalog__painter-content,
+  .catalog__painters {
+    width:calc(437 / 925 *100%);
+  }
+
+  .catalog__painter-name {
+    margin-bottom: 7px;
+  }
+
+  .catalog__painter-years {
+    margin-bottom: 8px;
+  }
+
+  .painters-info__gray {
+    width: 173px;
+    height: 114px;
+    padding: 8px;
+    margin-right: 25px;
+  }
+
+}
+
+@media (max-width : 970px) {
+  .catalog {
+    padding-top: 79px;
+    padding-bottom: 70px;
+  }
+
+  .catalog__content {
+    flex-direction: column-reverse;
+  }
+
+  .catalog__painters {
+    margin-bottom: 52px;
+  }
+
+  .catalog__painter-content,
+  .catalog__painters {
+    width: 100%;
+  }
+
+  .catalog__desc {
+    margin-bottom: 21px;
+  }
+
+  .painters-info__list {
+    column-count: 3;
+    padding-bottom: 23px;
+  }
+
+  .catalog__painter-name {
+    margin-bottom: 7px;
+  }
+
+  .catalog__painter-years {
+    margin-bottom: 8px;
+  }
+
+
+  .painters-info__gray {
+    width: 251px;
+    height: 165px;
+    padding: 12px;
+  }
+}
+
+@media (max-width : 700px) {
+  .painters-info__list {
+    column-count: 2;
+  }
+}
+
+@media (max-width : 610px) {
+  .catalog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .catalog__desc {
+    display: none;
+  }
+
+  .painters-info__list {
+    column-count: 1;
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
+
+  .painters-info__link {
+    width: 30px;
+    height: 30px;
+
+  }
+
+  .painters-info__link-open {
+    top: 8px;
+    left: 9px;
+    height: 7px;
+    width: 7px;
+  }
+
+  .is-active .painters-info__link-open {
+    top: 12px;
+  }
+
+  .painters-info__years {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px
+  }
+
+  .painters-info__gray {
+    width: 79px;
+    height: 118px;
+    padding: 6px;
+  }
+
+   .catalog__painter-image {
+    margin-bottom: 17px;
+  }
+
+  .catalog__painter-name {
+    margin-bottom: 12px;
+  }
+
+  .catalog__painter-desc {
+    width: 286px;
+  }
+}
+
+
+

@@ -1,0 +1,21 @@
+.about-us {
+  padding-bottom: 68px;
+}
+
+@media (max-width: 1280px) {
+  .about-us {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 610px) {
+  .about-us {
+    padding-bottom: 42px;
+  }
+
+  .about-us__desc {
+    font-size: 14px;
+    line-height: 28px;
+
+  }
+}
